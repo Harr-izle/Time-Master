@@ -10,7 +10,7 @@ class Clock {
     }
 
     updateTime() {
-        const now = new Date().toLocaleString('en-US', { timeZone: this.timeZone });
+        const now = new Date()
         const dateObj = new Date(now);
         this.hours = dateObj.getHours();
         this.minutes = dateObj.getMinutes();
