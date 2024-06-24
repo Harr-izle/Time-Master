@@ -52,6 +52,13 @@ body {
 .controls {
     margin-bottom: 1rem;
 }
+.format-24hour {
+    color: #0000FF ; /* Green color for 24-hour format */
+}
+
+.format-12hour {
+    color: #ff6600; /* Orange color for 12-hour format */
+}
 
 #toggle-format {
     font-size: 1rem;

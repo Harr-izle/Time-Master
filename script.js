@@ -36,20 +36,26 @@ class Clock {
         this.updateTime();
         const timeString = this.use24Hour ? this.getFormattedTime() : this.get12HourTime();
         const [hours, minutes, seconds] = timeString.split(':');
-
+    
         document.getElementById('hour').textContent = hours;
         document.getElementById('min').textContent = minutes;
         document.getElementById('sec').textContent = seconds;
         
         const meridiumElement = document.getElementById('meridium');
+        const timeDisplayElement = document.getElementById('time-display');
+        
         if (this.use24Hour) {
             meridiumElement.textContent = '';
             meridiumElement.style.display = 'none';
+            timeDisplayElement.classList.remove('format-12hour');
+            timeDisplayElement.classList.add('format-24hour');
         } else {
             meridiumElement.textContent = this.meridium;
             meridiumElement.style.display = 'inline';
+            timeDisplayElement.classList.remove('format-24hour');
+            timeDisplayElement.classList.add('format-12hour');
         }
-
+    
         this.checkAlarm();
     }
 
